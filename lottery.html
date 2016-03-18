@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>lottery</title>
+  <meta charset='utf-8'>
+  <link rel='stylesheet' type='text/css' href='styles/styles.css'>
+  <script type='text/javascript' src='scripts/jquery-2.2.0.js'></script>
+  <script type='text/javascript' src='scripts/rolling.js'></script>
+</head>
+
+<body>
+  <div class='container'>
+    <img src='images/box.png'>
+    <img id='ball' src='images/ball.png'>
+  </div>
+  <script>
+    $(function() {
+      $('.container').css({
+        'top': ($(window).height() - $('.container').height()) / 2 +'px',
+        'left': ($(window).width() - $('.container').width()) / 2 +'px'
+      });
+      $(window).resize(function() {
+        $('.container').css({
+          'top': ($(window).height() - $('.container').height()) / 2 +'px',
+          'left': ($(window).width() - $('.container').width()) / 2 +'px'
+        });
+      });
+      var list = ['我是大辣鸡啊', 'ZXCroon', '纯纯', '兔叽', '河神', '金萌', 'gml', '黄神', '11', '金昊', '桃子'];
+      a = new Rolling(list, 550, 140);
+      a.appendTo($('.container'));
+      a.css({
+        'position': 'absolute',
+        'top': '67px',
+        'left': '60px'
+      });
+      $('#ball').css({
+        'top': '20px',
+        'right': '30px'
+      });
+      var playing = false;
+      
+      window.onkeydown = function(event) {
+        if (event.keyCode != 32) return;
+        if (!playing) {
+          playing = true;
+          $('#ball').animate({
+            top: '95px'
+          }, 600);
+        }
+        else {
+          playing = false;
+          $('#ball').animate({
+            top: '20px'
+          }, 600);
+        }
+        $(window).trigger('anotherKeydown',[32]);
+      }
+
+    })
+  </script>
+</body>
+
+</html>

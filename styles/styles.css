@@ -1,0 +1,11 @@
+body {
+  background: url(../images/bg.jpg) no-repeat center center;
+}
+
+.container {
+  position: absolute;
+}
+
+#ball {
+  position: absolute;
+}
