@@ -1,7 +1,7 @@
 var MAX_FREQ = 22;
 var FONT_SIZE = 75;
 var WAIT_COEFFICIENT = 1.1;
-var SPACING = 8;
+var SPACING = 6;
 
 function Rolling(list, width, height) {
   var that = this; 
@@ -41,13 +41,11 @@ function Rolling(list, width, height) {
     'overflow': 'hidden'
   });
   this.prevDiv.css({
-    //'background': 'blue',
     'width': '100%',
     'height': '100%',
     'position': 'absolute'
   }).appendTo(this.box);
   this.nextDiv.css({
-    //'background': 'pink',
     'width': '100%',
     'height': '100%',
     'position': 'absolute',
@@ -58,6 +56,7 @@ function Rolling(list, width, height) {
     'text-align': 'center',
     'position': 'relative',
     'top': (that.height - content.height()) / 2 +'px',
+    'left': (that.width - content.width()) / 2 +'px',
     'color':'#222',
     'text-shadow': '0px 2px 3px #555'
   });

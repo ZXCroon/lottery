@@ -6,6 +6,14 @@ body {
   position: absolute;
 }
 
+.content {
+  font-family: Microsoft YaHei;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 #ball {
   position: absolute;
 }
