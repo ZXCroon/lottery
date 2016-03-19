@@ -39,8 +39,12 @@
       });
       var playing = false;
       
-      window.onkeydown = function(event) {
+      $(window).keydown(function(event) {
         if (event.keyCode != 32) return;
+        $('#ball').trigger('click');
+      });
+
+      $('#ball').click(function() {
         if (!playing) {
           playing = true;
           $('#ball').animate({
@@ -54,7 +58,7 @@
           }, 600);
         }
         $(window).trigger('anotherKeydown',[32]);
-      }
+      });
 
     })
   </script>
